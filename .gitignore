@@ -1,0 +1,14 @@
+## .NET Core / C# gitignore
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.idea/
+.vscode/
+
+## Results / Output folders
+results/*.json
+!results/.gitkeep
+
