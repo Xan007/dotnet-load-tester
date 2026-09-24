@@ -69,19 +69,6 @@ public sealed class LoadTestRunner : ILoadTestRunner
                 _presenter.ShowWarning("\n[CANCELLED] Round execution stopped early.");
                 break;
             }
-
-            if (i < options.Rounds.Count - 1 && !cancellationToken.IsCancellationRequested)
-            {
-                _presenter.ShowInfo("\n[COOLDOWN] Pausing 3 seconds before next round to allow socket & memory stabilization...");
-                try
-                {
-                    await Task.Delay(3000, cancellationToken);
-                }
-                catch (OperationCanceledException)
-                {
-                    break;
-                }
-            }
         }
 
         if (cancellationToken.IsCancellationRequested)
